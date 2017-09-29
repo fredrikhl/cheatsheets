@@ -51,12 +51,12 @@ Options:
 
 ## EXIT STATUS
 
-status | description
-------:| -----------
-     0 | Success.
-    -1 | An error in how samlsign was called (incorrect arguments, for example).
-    -2 | An error occurred when initializing the configuration.
-   -10 | An exception was caught.
+|status | description
+|------:| -----------
+|     0 | Success.
+|    -1 | An error in how samlsign was called (incorrect arguments, for example).
+|    -2 | An error occurred when initializing the configuration.
+|   -10 | An exception was caught.
 
 
 ## EXAMPLES
