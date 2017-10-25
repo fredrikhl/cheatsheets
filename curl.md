@@ -71,3 +71,9 @@ ssl:      %{ssl_verify_result}\n
 type:     %{content_type}\n
 outfile:  %{filename_effective}\n
 ```
+
+## get urls listed in files
+
+```bash
+xargs -n 1 curl -O < list.txt
+```
