@@ -20,11 +20,23 @@ tar -cvf /path/to/foo.tar /path/to/foo/
 * `-j` -- bzip2 (`.tar.bz2`, `.tbz2`)
 
 
-## exclude files from tarball
-`tar -cf /path/to/foo.tgz --exclude=\*.{jpg,png} /path/to/foo/`
+## Pack contents of a directory
+```bash
+# pack from parent folder
+tar -cf /path/to/foo.tar -C /path/to/parent target
 
-## To extract folder contents of an archive
-`tar -xf /path/to/foo.tar --strip 1`
+# pack from folder
+tar -cf /path/to/foo.tar -C /path/to/target .
+```
 
-# To extract contents to a directory
+### exclude files from tarball
+`tar -cf /path/to/foo.tar --exclude=\*.{jpg,png} /path/to/foo/`
+
+
+## Unpack contents
+
+### To a given directory
 `tar -xf /path/to/foo.tar -C /path/to/target/`
+
+### Strip parent folder in archive when unpacking
+`tar -xf /path/to/foo.tar --strip 1`
