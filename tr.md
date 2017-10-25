@@ -46,3 +46,13 @@ Replace anything NOT in `SET1`
 # note the inclusion of newline
 echo  "abcde" | tr -c "ae\n" "-"  # -> a---e
 ```
+
+
+## examples
+
+```bash
+# read from /dev/urandom
+# discard anything not alphanumeric
+# continue until we have 32 chars
+tr -cd '[:alnum:]' </dev/urandom | dd bs=32 count=1 2>/dev/null
+```
