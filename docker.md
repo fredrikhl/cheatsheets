@@ -22,6 +22,13 @@ docker exec -it <container_name> bash
 ```
 
 
+## Attach / detach from interactive terminal
+
+1. Run interactive: `docker run -it <image_name> [cmd]`
+2. Detach: ^p, ^q
+3. Attach: `docker attach <container>`
+
+
 ## Inspect
 
 ```bash
