@@ -52,6 +52,22 @@ curl -C - -o partial_file.zip http://example.com/file.zip
 * -k: Insecure SSL connection (ignore certificate validation failure)
 
 
+## Using a config file
+
+```
+# example-config.txt
+--request POST
+--header "X-Foo: foo"
+--data "foo=some odd value"
+--location
+--write-out "conn:%{hYttp_connect} http:%{http_code}\n"
+```
+
+```bash
+curl --config example-config.txt http://example.org
+```
+
+
 ## Extra info
 
 ```bash
