@@ -1,48 +1,48 @@
-# Pretty print the json
+# jq
+
+    jq . filename.json
+    cat filename.json | jq .
+
+
+## access some value
+
 ```bash
-jq "." filename.json
+# the value at key "foo"
+echo '{"foo": "bar"}' | jq '.foo'
+
+# first item of a list
+echo "[1, 2, 3, 4]" | jq '.[0]'
 ```
 
-# Access the value at key "foo"
-```bash
-jq '.foo'
-```
+## slice & dice
 
-# Access first list item
-```bash
-jq '.[0]'
-```
-
-# Slice & Dice
 ```bash
 jq '.[2:4]'
 jq '.[:3]'
 jq '.[-2:]'
 ```
 
-# Get 'name' for each object in list 'accounts'
+## Get 'name' for each object in list 'accounts'
+
 ```bash
 jq '.accounts[] | .name'
 ```
 
+
 # Objects
 
-## Translate
-
-To filter an object, and translate object key:
-
 ```bash
-echo '{"foo": "FOO", "bar": "BAR", "baz": "BAZ"}' | jq '{foo: .foo, bar: .baz}'
+# extract items from an object
+echo '{"foo": "FOO", "bar": "BAR", "baz": "BAZ"}' | jq '{a: .foo, b: .baz}'
+# → {"a":"FOO", "b":"BAZ"}
 ```
 
-## Delete attribute
+## Filter attributes
 
 ```bash
 # blacklist 'foo'
 echo '{"foo": "FOO", "bar": "BAR", "baz": "BAZ"}' | jq '. |= del(.foo)'
-```
 
-```bash
-# whitelist 'foo', 'bar'
-echo '{"foo": "FOO", "bar": "BAR", "baz": "BAZ"}' | jq '. |= {foo, bar}'
+# whitelist 'bar', 'baz'
+echo '{"foo": "FOO", "bar": "BAR", "baz": "BAZ"}' | jq '. |= {bar, baz}'
 ```
