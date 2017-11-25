@@ -53,6 +53,12 @@ rm -f path/to/dir/File{A,B}
 cvs commit path/to/dir
 ```
 
+## Get status
+
+```bash
+cvs -q -n update
+```
+
 
 ## Status codes
 

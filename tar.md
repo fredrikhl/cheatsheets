@@ -13,7 +13,6 @@ tar -xvf /path/to/foo.tar
 tar -cvf /path/to/foo.tar /path/to/foo/
 ```
 
-
 ## compress
 
 * `-z` -- gzip (`.tar.gz`, `.tgz`)
@@ -21,6 +20,7 @@ tar -cvf /path/to/foo.tar /path/to/foo/
 
 
 ## Pack contents of a directory
+
 ```bash
 # pack from parent folder
 tar -cf /path/to/foo.tar -C /path/to/parent target
@@ -30,13 +30,21 @@ tar -cf /path/to/foo.tar -C /path/to/target .
 ```
 
 ### exclude files from tarball
-`tar -cf /path/to/foo.tar --exclude=\*.{jpg,png} /path/to/foo/`
 
+```bash
+tar -cf /path/to/foo.tar --exclude=\*.{jpg,png} /path/to/foo/
+```
 
 ## Unpack contents
 
 ### To a given directory
-`tar -xf /path/to/foo.tar -C /path/to/target/`
+
+```bash
+tar -xf /path/to/foo.tar -C /path/to/target/
+```
 
 ### Strip parent folder in archive when unpacking
-`tar -xf /path/to/foo.tar --strip 1`
+
+```bash
+tar -xf /path/to/foo.tar --strip 1
+```
