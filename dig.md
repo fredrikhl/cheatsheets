@@ -17,3 +17,11 @@ dig -x <addr>
 
 - ANY
 - ALL
+
+## Filters
+
+Only include the answer section:
+
+```bash
+dig +noall +answer name
+```
