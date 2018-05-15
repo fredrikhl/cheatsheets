@@ -58,3 +58,10 @@ docker volume rm $(docker volume ls -qf dangling=true)
 # Cleanup dangling images:
 docker rmi $(docker images --filter "dangling=true" -q --no-trunc)
 ```
+
+
+## Build
+
+```bash
+docker build [--rm] [--no-cache] -f Dockerfile -t <name>:<version> <dir>
+```
