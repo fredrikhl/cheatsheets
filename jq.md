@@ -46,3 +46,14 @@ echo '{"foo": "FOO", "bar": "BAR", "baz": "BAZ"}' | jq '. |= del(.foo)'
 # whitelist 'bar', 'baz'
 echo '{"foo": "FOO", "bar": "BAR", "baz": "BAZ"}' | jq '. |= {bar, baz}'
 ```
+
+
+# String interpolation
+
+
+```bash
+jq -r '.users[] | "\(.first) \(.last)"' <<EOF
+{ "users": [ { "first": "Stevie", "last": "Wonder" },
+             { "first": "Michael", "last": "Jackson" }]}
+EOF
+```
