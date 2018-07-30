@@ -90,6 +90,9 @@ find . -type d '!' -exec test -e "{}/__init__.py" ';' -print
 ```bash
 # find files with size bigger than 5 Mb and sort them by size
 find . -size +5M -type f -print0 | xargs -0 ls -Ssh | sort -z
+
+# find files and sort by size
+find . -type f  -exec du -h {} + | sort -r -h | head
 ```
 
 ## delete file by inode
