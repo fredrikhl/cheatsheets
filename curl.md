@@ -52,6 +52,17 @@ curl -C - -o partial_file.zip http://example.com/file.zip
 * -k: Insecure SSL connection (ignore certificate validation failure)
 
 
+## Proxy
+
+Use a proxy for a given domain -- e.g. to force traffic through `ssltap`, but
+let curl set SNI and Host-header.
+
+```bash
+ssltap -s -p 8443 example.org:443
+curl https://example.org/ --connect-to example.org:443:localhost:8443
+```
+
+
 ## Using a config file
 
 ```
