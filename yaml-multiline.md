@@ -1,5 +1,9 @@
 # Yaml multiline syntax
 
+* <https://yaml-multiline.info/>
+* <https://github.com/wolfgang42/yaml-multiline>
+
+
 Block indicator: `[|>][-+]?[0-9]?`
 
 - Block Style Indicators
@@ -12,6 +16,17 @@ Block indicator: `[|>][-+]?[0-9]?`
 - Indentation Indicators
   - `[|>]` - default, use indentation of next line
   - `[|>]N` - use `N` spaces for indentation.
+
+
+## Line continuation
+
+```yml
+example: "foo\
+    bar\
+    baz"
+```
+
+> foobarbaz
 
 ## Replace newlines with spaces (folded)
 
