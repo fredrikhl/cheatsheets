@@ -15,6 +15,23 @@ lvs
 ```
 
 
+## Create a volume group
+
+```bash
+lvcreate -L 4G -n <lv> <vg>
+```
+
+```bash
+# format /dev/<vg>/<lv>, eg:
+mkfs.<fs> /dev/<vg>/<lv>
+# mount
+mkdir -p <dir>
+mount /dev/<vg>/<lv> <dir>
+# add to fstab
+echo "/dev/mapper/<vg>-<lv> <dir> <fs> defaults 1 1 >> /etc/fstab
+```
+
+
 ## Extend a volume group
 
 ```bash
