@@ -1,24 +1,47 @@
-# To install the latest version of a package:
-dnf install <package name>
+# Package contents
 
-# To search package details for the given string
-dnf search <string>
+## Find package by content
 
-# To find which package provides a binary
-dnf provides <path to binary>
+```bash
+dnf provides /path/to/file
+```
 
-# The following are available after installing "dnf-plugins-core"
 
-# Download a package
-dnf download <package name>
+## List package contents
 
-# install the build dependencies for a SRPM or from a .spec file
-dnf builddep <srpm/.spec file>
+Requires *dnf-plugins-core*?
 
-# Show package contents
-dnf repoquery -l <package name>
+```bash
+dnf repoquery -l <package-name>
+```
 
-# repos
+
+## Download a package
+
+Requires *dnf-plugins-core*?
+
+```bash
+dnf download <package-name>
+```
+
+
+# Versions
+
+## List all verisons
+
+```bash
+dnf --showduplicate --release=28 list <package-name>
+```
+
+
+## Install specific version
+
+```bash
+dnf install <package-name>-<version>
+```
+
+
+# Repos
 
 ## list repos
 
@@ -26,15 +49,27 @@ dnf repoquery -l <package name>
 dnf repolist [--all|--enabled|--disabled]
 ```
 
+
 ## list installed packages from given repo
 
 ```bash
 dnf repo-pkgs <repo> list installed
 ```
 
+
 ## enable disable repos
 
 ```bash
 dnf config-manager --set-enabled <repo>
 dnf config-manager --set-disabled <repo>
+```
+
+
+# Install build dependencies
+
+Install the build dependencies for a SRPM or from a `.spec` file. Requires
+*dnf-plugins-core*?
+
+```bash
+dnf builddep <srpm/.spec file>
 ```
