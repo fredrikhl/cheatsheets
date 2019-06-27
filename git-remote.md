@@ -26,3 +26,10 @@ git push <remote> <local-name>
 git push <remote> <local-name>:<remote-name>
 git push -u <remote> <local-name>:<remote-name>  # Set up tracking for the local repo
 ```
+
+
+## delete a remote branch
+
+```bash
+git push <remote> --delete <branch-name>
+```
