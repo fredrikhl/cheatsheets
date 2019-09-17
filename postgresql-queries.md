@@ -88,3 +88,31 @@ WHERE
 ORDER BY 
   n_live_tup DESC;
 ```
+
+
+## drop all tables
+
+Select all tables as drop statements:
+
+```sql
+select 'drop table if exists "' || tablename || '" cascade;'
+from pg_tables
+where schemaname = current_schema();
+```
+
+Select and run the above
+```sql
+DO $$ DECLARE
+    r RECORD;
+BEGIN
+    FOR r IN (SELECT tablename FROM pg_tables WHERE schemaname = current_schema()) LOOP
+        EXECUTE 'DROP TABLE IF EXISTS ' || quote_ident(r.tablename) || ' CASCADE';
+    END LOOP;
+END $$;
+```
+
+Or drop the schema:
+```sql
+drop schema public cascade;
+create schema public;
+```
