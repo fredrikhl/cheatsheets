@@ -47,3 +47,9 @@ Classes:
 - `%desc`: file descriptor syscalls
 - `%net`: network related syscalls
 
+
+## trace socket activity
+
+```bash
+strace -x -e trace=%net -e read=<fd> -e write=<fd> -p <pid>
+```
