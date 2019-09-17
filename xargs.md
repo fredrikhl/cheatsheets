@@ -63,6 +63,9 @@ echo '[bar]'
 ```bash
 # run multiple commands per argument
 echo -e "foo\nbar\nbaz\n" | xargs -I% sh -c 'echo "[%]"; echo "{%}";'
+# cat files with the filename as a header comment,
+# and an extra line separating the files
+ls -1 /path/to/files/ | xargs -I% sh -c 'echo "#" "%"; cat "%"; echo ""'
 ```
 
 
