@@ -21,7 +21,7 @@ man 8 bcc-sslsniff
 
 ```bash
 man 8 bcc-statsnoop
-/usr/share/bcc/tools/sslsniff -h
+/usr/share/bcc/tools/statsnoop -h
 
 # Look for access of a specific file
 /usr/share/bcc/tools/statsnoop | grep <filename>
