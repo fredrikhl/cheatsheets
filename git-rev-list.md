@@ -1,9 +1,12 @@
 # git rev-list
 
+Show commits in the commit tree of a given ref
+
 ```bash
-# Show all commits in the commit tree of master
-# From newest to oldest
+# newest first
 git rev-list master
+# show current/latest commit
+git rev-list master | head -n1
 
 # Reverse the order (oldest to newest)
 git rev-list --reverse master
