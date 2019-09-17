@@ -4,12 +4,11 @@
 setxkbmap -layout <layout> [-variant <variant>]
 ```
 
-
 ## Layouts
 
 List layouts:
 
-```
+```bash
 # Layouts
 localectl list-x11-keymap-layouts
 
@@ -17,8 +16,10 @@ localectl list-x11-keymap-layouts
 localectl list-x11-keymap-variants [layout]
 ```
 
+Default layouts are located in `/usr/share/X11/xkb/symbols/`
 
-## Layout per device
+
+## Per device settings
 
 ```bash
 # List device IDs
@@ -28,9 +29,11 @@ xinput -list
 setxkbmap -device <id> ...
 ```
 
+## Options
 
-## xkb layout files
+```bash
+setxkbmap -option <option>
+```
 
-Default layouts are located in:
-
-- `/usr/share/X11/xkb/symbols/`
+- Compose: `-option compose:menu`
+- ISO Level3: `-option level3:ralt_switch`
