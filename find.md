@@ -68,6 +68,12 @@ find . -size +5M -type f -print0 | xargs -0 ls -Ssh | sort -z
 find . -type f -size +20000k -exec ls -lh {} \; | awk '{ print $9 ": " $5 }'
 ```
 
+## delete
+
+```
+find . -type f -name 'foo*' -delete -print
+```
+
 
 # examples
 
