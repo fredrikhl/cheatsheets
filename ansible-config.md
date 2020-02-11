@@ -72,3 +72,20 @@ Host *
     IdentitiesOnly yes
     LogLevel FATAL
 ```
+
+
+## playbook
+
+
+```yaml
+- hosts:
+    - localhost
+  tasks:
+    - debug:
+      args:
+        msg: "{{ foo | map(attribute='bar') | list }}"
+  vars:
+    foo:
+      - bar: baz
+      - bar: bat
+```
