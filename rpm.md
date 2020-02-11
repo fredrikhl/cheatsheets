@@ -17,29 +17,59 @@ rpm -K <package>
 rpm -V <package>
 ```
 
-## Finding packages
+
+## Dependencies
+
+```bash
+# List dependencies of RPM-file
+rpm -qR -p <file>
+
+# List dependencies of package
+rpm -qR <installed-package>
+
+# Find missing dependencies for an RPM-file
+rpm -i --test <file>
+
+# Find installed packages that depends on a package
+rpm -q --whatrequires <installed-package|file>
+```
+
+
+## Package content
 
 ```bash
 # To find what package installs a file:
 rpm -qf </path/to/file>
 
 # To find what files are installed by a package:
-rpm -ql <package>
-rpm -qpl <rpm>
+rpm -ql <installed-package>
+rpm -ql -p <file>
+```
 
-# To find what packages require a package or file:
-rpm -q --whatrequires <package>
-rpm -q --whatrequires <file>
+```bash
+# extract content
+mkdir <rpm-content>
+rpm2cpio </path/to.rpm> | cpio -idmv -D <rpm-content>
+```
+
+## Specific files
+
+```
+# To find what package owns a file
+rpm -qf <file>
+
+# To find what package provides a file
+rpm -q --whatprovides <file>
+```
+
+
+## Finding packages
+
+```bash
 
 # To list all installed packages:
 rpm -qa
 
-# To find a pkg's dependencies
-rpm -i --test <package>
-```
-
-## List installed RPMs by size
-
-```bash
+# list installed packages by size
 rpm -qa --queryformat '%{name} %{size}\n' | sort -n -k 2 -r | head -n 20
 ```
