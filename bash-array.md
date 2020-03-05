@@ -51,3 +51,20 @@ ${foo[@]:${#foo[@]}-2}
 # minus the last two elements
 ${foo[@]::${#foo[@]}-2}
 ```
+
+
+## length
+
+```bash
+echo "${#foo[@]}"
+```
+
+
+## indices
+
+```bash
+for i in "${!foo[@]}"
+do
+  echo "$i" "${foo[$i]}"
+done
+```
