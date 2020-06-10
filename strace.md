@@ -27,6 +27,7 @@ strace -c <command>
 strace -p <pid>
 ```
 
+
 ## Trace access to a file
 
 ```bash
@@ -52,4 +53,11 @@ Classes:
 
 ```bash
 strace -x -e trace=%net -e read=<fd> -e write=<fd> -p <pid>
+```
+
+
+## see stderr and stdout from a process
+
+```bash
+strace -e write=1,2 -p <pid>
 ```
