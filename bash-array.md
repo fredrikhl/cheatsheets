@@ -68,3 +68,11 @@ do
   echo "$i" "${foo[$i]}"
 done
 ```
+
+
+## range
+
+```bash
+for i in {1..3}; do echo "i=$i"; done
+foo=({1..3})
+```
