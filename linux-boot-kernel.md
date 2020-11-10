@@ -1,13 +1,24 @@
-# grubby
+# Linux kernel info
 
-Current kernel version
 
 ```
+# current kernel version
 uname -r
-```
-
-Kernel that will be used at reboot:
-
-```
+#
+# kernel that will be used at reboot:
 grubby --default-kernel
+#
+# installed kernels (rpm):
+rpm -q kernel
+```
+
+
+## Needs reboot
+
+```
+# feroda/centos/rhel
+needs-restarting -r
+#
+# others
+cat /var/run/reboot-required
 ```
