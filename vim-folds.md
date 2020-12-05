@@ -1,6 +1,6 @@
-# vim: folds
+# vim - folds
 
-## keys
+## normal mode keys
 
 * [`za`, `zA`] Toggle open/close fold, all folds
 * [`zo`, `zO`] Open fold, all folds

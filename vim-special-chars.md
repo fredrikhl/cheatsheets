@@ -1,4 +1,4 @@
-# vim: insert special characters
+# vim - special characters
 
 ## insert bytes / unicode code points
 

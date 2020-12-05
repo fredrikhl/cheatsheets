@@ -1,9 +1,10 @@
-# vim: search
+# vim - search
 
-## search
+## regular searchsearch
 
 * Search word under cursor: [ * ]
 * Search for complete word: `\<foo\>`
+* clear highlight: `let @/=''`
 
 
 ## search and replace
