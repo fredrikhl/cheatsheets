@@ -1,6 +1,43 @@
 # journalctl
 
 
+## Useful options
+
+```bash
+journalctl -f  # Follow output
+journalctl -b  # Show log entries since boot
+```
+
+
+## Combining
+
+```bash
+# Logical AND
+journalctl _SYSTEMD_UNIT=avahi-daemon.service _PID=28097
+
+# Using the same field twice makes it a logical OR
+journalctl _SYSTEMD_UNIT=avahi-daemon.service _SYSTEMD_UNIT=dbus.service
+
+# Use `+' as logical OR
+journalctl _SYSTEMD_UNIT=avahi-daemon.service _PID=28097 + _SYSTEMD_UNIT=dbus.service
+```
+
+
+## Filters
+
+```bash
+journalctl _PID=1200     # Filter by process ID
+journalctl _UID=1000     # Filter by user ID
+journalctl _COMM=sshd    # Filter by command
+```
+
+List available values for a given filter:
+
+```bash
+journalctl -F _PID
+```
+
+
 ## Filter by log level
 
 `journalctl -p <level>`, where `<level>` is one of:
@@ -15,30 +52,6 @@
 7. debug
 
 
-## Useful options
-
-```bash
-journalctl -f  # Follow output
-journalctl -b  # Show log entries since boot
-```
-
-
-## Filters
-
-```bash
-journalctl _PID=1200                    # Filter by process ID
-journalctl _UID=1000                    # Filter by user ID
-journalctl _COMM=sshd                   # Filter by command
-journalctl _SYSTEMD_UNIT=tomcat.service # Filter by systemd service (also `-u')
-```
-
-List available values for a given filter:
-
-```bash
-journalctl -F _PID
-```
-
-
 ## Filter by time period
 
 ```bash
@@ -47,15 +60,7 @@ journalctl --since="10:00" --until="11:00"
 ```
 
 
-## Filter by specific unit
-
-```bash
-journalctl -u dbus
-journalctl --unit tomcat.service
-```
-
-
-## Arguments
+## Filter by pathname
 
 ```bash
 # filter by executeable name
@@ -66,15 +71,21 @@ journalctl /dev/sda
 ```
 
 
-## Combine filters
+## Filter by identifier
+
+Filter by the syslog identifier (name in the short format)
 
 ```bash
-# Logical AND
-journalctl _SYSTEMD_UNIT=avahi-daemon.service _PID=28097
+journalctl -t systemd
+journalctl --itentifier systemd
+journalctl SYSLOG_IDENTIFIER=systemd
+```
 
-# Using the same field twice makes it a logical OR
-journalctl _SYSTEMD_UNIT=avahi-daemon.service _SYSTEMD_UNIT=dbus.service
 
-# Use `+' as logical OR
-journalctl _SYSTEMD_UNIT=avahi-daemon.service _PID=28097 + _SYSTEMD_UNIT=dbus.service
+## Filter by specific systemd unit
+
+```bash
+journalctl -u dbus
+journalctl --unit tomcat.service
+journalctl _SYSTEMD_UNIT=tomcat.service
 ```
