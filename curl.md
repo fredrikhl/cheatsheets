@@ -104,3 +104,11 @@ outfile:  %{filename_effective}\n
 ```bash
 xargs -n 1 curl -O < list.txt
 ```
+
+
+## progress
+
+- `--no-progress-meter` - disables progress meter
+- `-#`/`--progress-bar` - replaces meter with a simple progress bar
+- `-s`/`--silent` - disables progress meter and other non-response output
+- `-v`/`--verbose` - disables progress meter
