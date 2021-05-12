@@ -14,6 +14,14 @@
 * `--ignore-file <file>`
 
 
+## Only include given file name patterns
+
+```bash
+# only search files named *foo*.txt
+ack --type-set='footype:match:.*foo.*\.txt' -t footype <pattern>
+```
+
+
 ## Output
 
 * Only list matching files: `-l`
