@@ -11,6 +11,10 @@
 
 Replace using last search: ``s//bar/``
 
+Step-through replacement on regular search result buffer: `cgn` on a match and
+escape back to normal mode.  Now `.` can be used to repeat this on other
+matches.
+
 
 ### Modifiers
 
