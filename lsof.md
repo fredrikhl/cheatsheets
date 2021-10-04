@@ -17,6 +17,9 @@ lsof /path/to/file
 
 # List all files open for a particular user
 lsof -u <username>
+
+# List open files that have been unlinked
+lsof +L1
 ```
 
 ## network
