@@ -24,3 +24,12 @@ git clean -X
 # *also* remove untracked gitignored files
 git clean -x
 ```
+
+
+### Examples
+
+```bash
+# remove all untracked files
+# (force, remove directories, ignore .gitignore)
+git clean -f -d -x
+```

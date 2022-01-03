@@ -1,5 +1,14 @@
 # git cheat sheet
 
+Helpful git fixes: <https://ohshitgit.com/>
+
+## Debugging
+
+```bash
+GIT_CURL_VERBOSE=1 GIT_TRACE=1 git …
+```
+
+
 ## clone
 
 ```bash
@@ -45,13 +54,6 @@ git checkout -- <file>
 ```
 
 
-## remove untracked files
-
-```bash
-git clean -f -d -x  # force, remove directories, ignore .gitignore
-```
-
-
 ## Getting info on a repo
 ```bash
 git ls-remote --heads <git-url>
@@ -60,6 +62,7 @@ git ls-remote --tags <git-url>
 
 
 ## Submodule
+
 ```bash
 # Clone with submodules
 git clone --recursive
