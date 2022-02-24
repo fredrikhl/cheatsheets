@@ -31,5 +31,16 @@ echo ${PIPESTATUS[0]}  # replace 0 with N
 export $( grep -v '^\s*\(#\|$\)' /path/to/envvars | xargs )
 ```
 
+# scoping is broken
+
+```bash
+myfunc() {
+    myfunc() {
+        echo redefined myfunc;
+    };
+    echo first myfunc;
+};
+```
+
 
 [GNU bash documentation]: https://www.gnu.org/software/bash/manual/html_node/index.html
