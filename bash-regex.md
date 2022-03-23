@@ -1,0 +1,3 @@
+# Bash regex
+
+<http://www.gnu.org/savannah-checkouts/gnu/bash/manual/bash.html#Conditional-Constructs>
