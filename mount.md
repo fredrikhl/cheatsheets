@@ -18,8 +18,17 @@ mount -o loop disk1.iso /mnt/disk
 ```
 
 
-## Fix buggy NFS share
+## NFS mounts
+
+### Fix buggy NFS share
 
 ```bash
 mount -o remount /uio/kant/usit-uait-u1
+```
+
+
+### List exports
+
+```bash
+showmount -e kant
 ```
