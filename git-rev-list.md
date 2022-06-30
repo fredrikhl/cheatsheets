@@ -5,7 +5,9 @@ Show commits in the commit tree of a given ref
 ```bash
 # newest first
 git rev-list master
+
 # show current/latest commit
+git rev-list --max-count=1 master
 git rev-list master | head -n1
 
 # Reverse the order (oldest to newest)
