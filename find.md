@@ -7,21 +7,17 @@
 find . -iname "*.jpg"
 ```
 
+
 ## type
 
 ```
-# directories
-find . -type d
-
-# files
+# directories (d), files (f), symlinks (l)
 find . -type f
 
-# symlinks
-find . -type l
-
-# hardlinks, files that are hardlinks to <myfile>
+# files that are hardlinks to <myfile>
 find . -type f -samefile '<myfile>'
 ```
+
 
 ## permissions
 
@@ -36,18 +32,27 @@ find . -type f -xdev \( -perm -4000 \) -print0 | xargs -0 ls -l
 find . -type f --user=username -ls
 ```
 
+
 ## depth
 
 ```bash
 find . -mindepth 1 -maxdepth 3
 ```
 
+
 ## time
 
 ```bash
 # find files modified more than 7 days ago and list file information
 find . -type f -mtime +7d -ls
+
+# find files modified in the last 60 minutes
+find . -type f -mmin -60
+
+# find files *not* modified in the last 60 minutes
+find . -type f -mmin +60
 ```
+
 
 ## execute
 
@@ -67,6 +72,7 @@ find . -size +5M -type f -print0 | xargs -0 ls -Ssh | sort -z
 # find files bigger than 2 MB and list them
 find . -type f -size +20000k -exec ls -lh {} \; | awk '{ print $9 ": " $5 }'
 ```
+
 
 ## delete
 
