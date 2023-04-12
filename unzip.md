@@ -25,3 +25,10 @@ unzip -tq archive.zip
 unzip -l archive.zip
 unzip -Z1 archive.zip  # see zipinfo for more
 ```
+
+
+## Password protected archive
+
+```bash
+7za x -p<password> <file>
+```
