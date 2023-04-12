@@ -61,17 +61,6 @@ git ls-remote --tags <git-url>
 ```
 
 
-## Submodule
-
-```bash
-# Clone with submodules
-git clone --recursive
-
-# Checkout submodules in existing repo
-git submodule update --init
-```
-
-
 ## Undo/redo unpushed commit
 ```bash
 git reset HEAD~   # undo commit, but don't touch working tree
