@@ -39,6 +39,5 @@ Set output format with `-t <format>`:
 
 ```bash
 echo 'Hello, World!' | qrencode -t ANSI256 -o -
-
-echo 'Hello, World!' | qrencode -t PNG -s 10 -m 5 -v30 -l Q -o /tmp/file.png
+echo 'Hello, World!' | qrencode -t PNG -d 300 -s 5 -m 5 -v10 -l Q -o /tmp/file.png
 ```
