@@ -12,6 +12,11 @@ dmidecode --oem-sring <n>
 
 ## keywords
 
+```bash
+# list all available keywords
+dmidecode -s 
+```
+
 - bios-vendor
 - bios-version
 - bios-release-date
@@ -42,6 +47,11 @@ dmidecode --oem-sring <n>
 
 ## types
 
+```bash
+# list all available types
+dmidecode -t 
+```
+
 - baseboard
 - bios
 - cache
@@ -56,6 +66,9 @@ dmidecode --oem-sring <n>
 ## examples
 
 ```bash
-# get model number, serial number
+# get model number, serial number, etc…
 sudo dmidecode -t system
+
+# get bios version, etc…
+dmidecode -t bios    # bios version, etc...
 ```
