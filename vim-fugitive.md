@@ -1,9 +1,9 @@
 # vim-fugitive
 
-## Gblame
+## Git blame
 
 ```
-:Gblame [flags] 
+:Git blame [flags] 
     Run git-blame on the file and open the results in a
     scroll bound vertical split.  You can give any of
     ltfnsewMC as flags and they will be passed along to
@@ -26,3 +26,13 @@
 ```
 
 To close a buffer: C-w q
+
+
+## Git diff
+
+Diff current file
+
+```
+:Git diff -- %
+:Gidffsplit
+```
