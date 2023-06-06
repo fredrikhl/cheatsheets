@@ -6,7 +6,9 @@
 hexdump -C [file]
 
 # 16 hex bytes pr line
-hexdump -e '16/1 "%02x " "\n"' [file]
+hexdump -e '16/1 " %02x" "\n"' [file]
+# ... is equivalent to ...
+od -t x1 -An -v [file]
 ```
 
 
