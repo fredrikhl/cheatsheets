@@ -28,3 +28,9 @@ ssh-keygen -lf "${HOME}/.ssh/id_rsa"
 ssh-keygen -lf "${HOME}/.ssh/id_rsa.pub"
 ssh-keygen -lf "${HOME}/.ssh/authorized_keys"
 ```
+
+## Change comment
+
+```bash
+ssh-keygen -c -C "foo" -f "${HOME}/ssh/id_rsa"
+```
