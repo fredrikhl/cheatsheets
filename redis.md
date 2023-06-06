@@ -22,6 +22,11 @@ redis-cli --raw LRANGE foo 0 1
 - Get ttl on key: `TTL <key>`
 
 
+## Tips
+
+- Clear database `FLUSHDB`
+
+
 ## Types
 
 ### Scalar
