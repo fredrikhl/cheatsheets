@@ -6,6 +6,20 @@ hexdump util
 echo 'Hello, World!' | xxd
 ```
 
+```bash
+echo 'Hello, World!' | xxd
+```
+
+
+## reverse hexdump
+
+```bash
+xxd original | xxd -r
+od -tx1 -An -v original | xxd -r -p
+hexdump -C original | sed 's/^[0-9a-f]\+//' | sed 's/|.*$//' | xxd -r -p
+hexdump -e '16/1 "%02x " "\n"' original | xxd -r -p
+```
+
 
 ## examples
 
