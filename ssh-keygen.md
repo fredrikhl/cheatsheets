@@ -1,17 +1,29 @@
-# Create SSH keys
+# ssh-keygen
+
+Create or modify SSH keys.
+
+
+## Generate key
 
 ```bash
-# To generate an SSH key:
-ssh-keygen -t rsa
-
-# To generate a 4096-bit SSH key:
+# Generate a 4096-bit RSA-key:
 ssh-keygen -t rsa -b 4096
 
-# To generate a 4096 bit RSA key with a passphase and comment containing the user and hostname
-ssh-keygen -t rsa -b 4096 -C "${USER}@${HOSTNAME}" -P passphrase
+# Generate an ed25519-key:
+ssh-keygen -t ed25519
+
+# Generate key with a given comment
+ssh-keygen -t ed25519 -C "${USER}@${HOSTNAME}
+
+# Generate key with a given passphrase
+ssh-keygen -t ed25519 -P passphrase
+
+# Write key to specific location
+ssh-keygen -t ed25519 -f ~/.ssh/my-key
 ```
 
-## Encrypt private key
+
+## Modify passphrase
 
 ```bash
 # To set or update a passphrase on a key
@@ -21,16 +33,18 @@ ssh-keygen -p -P <old pass> -N <new pass> -f "${HOME}/.ssh/my_key"
 ssh-keygen -p -P <old pass> -N '' -f "${HOME}/.ssh/my_key"
 ```
 
+
+## Modify comment
+
+```bash
+ssh-keygen -c -C "foo" -f "${HOME}/ssh/id_rsa"
+```
+
+
 ## Show fingerprints
 
 ```bash
 ssh-keygen -lf "${HOME}/.ssh/id_rsa"
 ssh-keygen -lf "${HOME}/.ssh/id_rsa.pub"
 ssh-keygen -lf "${HOME}/.ssh/authorized_keys"
-```
-
-## Change comment
-
-```bash
-ssh-keygen -c -C "foo" -f "${HOME}/ssh/id_rsa"
 ```
