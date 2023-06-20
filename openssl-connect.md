@@ -18,7 +18,8 @@ openssl s_client -connect <host:port>
 * `-debug`: Show debug info
 * `-showcerts`: Show all certificates in chain presented by server
 * `-key`: Use private client key
-* `-CAfile <file>`: Use CA certificate in (PEM) `<file>`
+* `-CAfile <file>`: Use CA certificate from PEM-file
+* `-servername <name>`:  Set TLS extension servername (SNI) in ClientHello (default)
 
 ## Connect to server and show certificate info
 ```bash
