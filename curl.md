@@ -20,11 +20,9 @@
 
 ## HTTP
 
-* -I: Only fetch headers
-* -i: Include headers in output
 * -H <header>: Add header to request, e.g. `curl -H "Foo: bar"`
 * -L: Follow 3xx (relocate) responses
-* -v: Verbose, shows request and response headers
+* -I: Only fetch headers
 
 
 ## Security
@@ -45,12 +43,14 @@ curl https://example.org/ --connect-to example.org:443:localhost:8443
 ```
 
 
-## Progress options
+## Verbosity
 
-- `--no-progress-meter` - disables progress meter
-- `-#`/`--progress-bar` - replaces meter with a simple progress bar
-- `-s`/`--silent` - disables progress meter and other non-response output
-- `-v`/`--verbose` - disables progress meter
+* `-i`, `--include`: Include headers in output
+* `--trace-ascii /dev/stderr`: show full request and response
+* `--no-progress-meter` - disables progress meter
+* `-#`, `--progress-bar` - replaces meter with a simple progress bar
+* `-s`, `--silent` - disables progress meter and other non-response output
+* `-v`, `--verbose` - disables progress meter
 
 
 ## Examples
