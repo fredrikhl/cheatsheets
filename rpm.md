@@ -49,7 +49,7 @@ rpm -ql -p <file>
 ```bash
 # extract content
 mkdir <rpm-content>
-rpm2cpio </path/to.rpm> | cpio -idmv -D <rpm-content>
+rpm2cpio </path/to.rpm> | cpio -idmv -D <rpm-content> --no-absolute-filenames
 ```
 
 ## Specific files
