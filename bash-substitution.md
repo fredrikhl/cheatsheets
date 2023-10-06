@@ -5,6 +5,10 @@
 info bash Basic 'Shell Expansions' 'Shell Parameter'
 ```
 
+- [Bash parameter expansion](https://www.gnu.org/software/bash/manual/html_node/Shell-Parameter-Expansion.html)
+- [Patten matching](https://www.gnu.org/software/bash/manual/html_node/Pattern-Matching.html)
+
+
 ## Defaults / empty tests
 
 | syntax            | if $var   | result        |
@@ -45,7 +49,7 @@ echo "${var:+default}"  # 'default', var='nonempty'
 | `${var%pattern}`    | back  | remove shortest 'pattern'      |
 | `${var%%pattern}`   | back  | remove longest 'pattern'       |
 | `${var/pat/sub}`    | any   | replace first 'pat' with 'sub' |
-| `${var/pat/sub}`    | any   | replace all 'pat' with 'sub'   |
+| `${var//pat/sub}`   | any   | replace all 'pat' with 'sub'   |
 | `${var:offset}`     | any   | strip offset chars from start  |
 | `${var:offset:len}` | any   | take len chars from offset     |
 
@@ -71,6 +75,10 @@ echo "${text/foo/baz}"  # baz bar foo
 
 text="foo bar foo"
 echo "${text//foo/baz}"  # baz bar baz
+
+# replace everything with placeholder
+text="secret"
+echo "${text//?/*}"  # ******
 
 # index
 text=1234567890
