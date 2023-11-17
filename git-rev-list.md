@@ -19,3 +19,13 @@ git rev-list --count master
 # Show commits touching a given file.
 git rev-list master -- path/to/file
 ```
+
+
+## ahead/behind
+
+```bash
+# Shows:
+#   1. N commits in A, *not* in B
+#   2. N commits in B, *not* in A
+git rev-list --left-right --count A...B
+```
