@@ -116,3 +116,13 @@ Or drop the schema:
 drop schema public cascade;
 create schema public;
 ```
+
+## select by json-data
+
+```sql
+SELECT * FROM foo_table
+WHERE CAST (json_col -> 'json_attr' AS TEXT) = 'some-text';
+
+SELECT * FROM foo_table
+WHERE CAST (json_col -> 'json_attr' ->> 'dict_attr' AS INTEGER) = 2;
+```
