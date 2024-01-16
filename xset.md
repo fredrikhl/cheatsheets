@@ -13,3 +13,11 @@ xset q
 xset s off
 xset s on
 ```
+
+
+## Display power settings
+
+```bash
+xset dpms <standby> <suspend> <off>
+xset dpms 300 600 0
+```
