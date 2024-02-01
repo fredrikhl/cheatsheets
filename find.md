@@ -44,7 +44,7 @@ find . -mindepth 1 -maxdepth 3
 
 ```bash
 # find files modified more than 7 days ago and list file information
-find . -type f -mtime +7d -ls
+find . -type f -mtime +7 -ls
 
 # find files modified in the last 60 minutes
 find . -type f -mmin -60
@@ -58,10 +58,10 @@ find . -type f -mmin +60
 
 ```bash
 # find files with extension '.txt' and remove them
-find ./path/ -name '*.txt' -exec rm '{}' ';'
+find ./path/ -name '*.txt' -delete
 
 # find and delete empty directories
-find . -type d -empty -exec rmdir '{}' ';'
+find . -type d -empty -delete
 
 # find files with extension '.txt' and look for a string into them
 find ./path/ -name '*.txt' | xargs grep 'string'
