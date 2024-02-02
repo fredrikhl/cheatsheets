@@ -1,5 +1,13 @@
 # Package contents
 
+
+## List package by name pattern
+
+```bash
+dnf list prefix-*
+```
+
+
 ## Find package by content
 
 ```bash
