@@ -13,8 +13,9 @@ rpm -e --nodeps <package>
 # Display checksum against source
 rpm -K <package>
 
-# Verify a package
+# Verify a package - can be used to show modified files
 rpm -V <package>
+rpm -Va
 ```
 
 
