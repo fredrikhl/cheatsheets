@@ -9,3 +9,12 @@ Part of shadow-utils.  Other relevant commands: `useradd`, `userdel`,
 ```bash
 usermod -a -G <group name> <username>
 ```
+
+
+## Use group
+
+Log into the group to avoid having to log out/in.
+
+```bash
+newgrp <group name>
+```
