@@ -1,20 +1,60 @@
 # ack
 
+Text finder: `ack <pattern> [<file|dir>...]`
+
+
+## Matching
+
+`ack PATTERN` *or* `ack --match PATTERN`.
+Exclude potentially matching lines with `--not PATTERN`.
+
+```bash
+# find occurences of foo, unless:
+#  - immediately followed by 'bar', '_bar', or '-bar'
+#  - the line starts with 'import '
+ack --not 'foo[-_]?bar' --not '^import ' --match foo
+```
+
 
 ## Context
 
-* `-A <n>`, `--after-context=<n>`
-* `-B <n>`, `--before-context=<n>`
-* `-C <n>`, `--context=<n>`
+* After: `-A <n>`, `--after-context=<n>`
+* Before: `-B <n>`, `--before-context=<n>`
+* Both: `-C <n>`, `--context=<n>`
 
 
-## Ignore
+## Filename matching
 
-* `--ignore-dir <dir>`
-* `--ignore-file <file>`
+To ignore certain directory names: `--ignore-dir <name>`.  Example:
+
+```bash
+ack --ignore-dir docs --match example
+```
 
 
-## Only include given file name patterns
+To ignore files: `--ignore-file <filter>:<args>`.  Examples:
+
+```bash
+# ignore exact filename
+ack --ignore-file is:README.md …
+
+# ignore file extensions (case insensitive)
+ack --ignore-file ext:md,rst,txt …
+
+# ignore file pattern (case insensitive)
+ack --ignore-file match:readme(.(md|rst|txt))? …
+
+To ignore files based on first line (e.g. hash-bang, case insensitive)
+ack --ignore-file firstlinematch:/bash/ example
+```
+
+To only include certain file types:
+
+```bash
+ack -t python …
+```
+
+Define custom types to only include certain files:
 
 ```bash
 # only search files named *foo*.txt
