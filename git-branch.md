@@ -17,3 +17,10 @@ git branch -m <newname>
 # rename another branch
 git branch -m <oldname> <newname>
 ```
+
+
+## set tracking branch
+
+```bash
+git branch -u <remote>/<branch>
+```
