@@ -32,6 +32,16 @@
 * -k: Insecure SSL connection (ignore certificate validation failure)
 
 
+## Posting
+
+```bash
+curl -v \
+  -H "Content-Type: application/json" \
+  --data '{"foo": "bar"}' \
+  http://localhost/
+```
+
+
 ## Proxy
 
 Use a proxy for a given domain -- e.g. to force traffic through `ssltap`, but
