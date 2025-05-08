@@ -64,8 +64,11 @@ ack --type-set='footype:match:.*foo.*\.txt' -t footype <pattern>
 
 ## Output
 
-* Only list matching files: `-l`
-* Only list non-matching files: `-L`
+- Only list matching files: `-l`
+- Only list non-matching files: `-L`
+- Don't highlight match: `-o`
+- Don't put a break between files: `--nobreak`
+
 
 
 ## Encoding
