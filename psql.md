@@ -1,7 +1,7 @@
 # psql
 
-Set commands in `.psqlrc`
+Client settings for `psql`.  Add to `.psqlrc` for persistence.
 
-* `\x [auto]` enable/disable/auto expanded display
-* `\timing` enable/disable timing of all queries
+* `\x [auto,on,off]`: expanded display
+* `\timing {on,off}`: timing of all queries
 * `\set AUTOCOMMIT {on,off}`
