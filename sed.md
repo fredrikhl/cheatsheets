@@ -2,8 +2,11 @@
 
 ## usage
 
-`-i [backup-suffix]`, `--in-place [backup-suffix]` - edit file in place
-`-r`, `--regexp-extended`
+* `-i [backup-suffix]`, `--in-place [backup-suffix]` - edit file in place (with
+  optional backup)
+
+* `-r`, `-E`, `--regexp-extended` - use extended regex
+
 
 ## modifiers
 
