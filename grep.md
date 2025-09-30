@@ -6,10 +6,20 @@
 grep pattern [file]
 ```
 
-* `-E`  - use extended regex
 * `-i` - case insensitive
 * `-n` - line numbers
 * `-v` - exclude matching lines
+
+
+## extended regex
+
+* `-E`  - use extended regex
+
+```bash
+grep "object u\?'\([-_0-9A-Za-z]\+\)'"
+grep -E "object u?'([-_0-9A-Za-z]+)"
+```
+
 
 ## recursive search
 
