@@ -34,5 +34,6 @@ Diff current file
 
 ```
 :Git diff -- %
-:Gidffsplit
+:Gdiffsplit
+:Gvdiffsplit
 ```
