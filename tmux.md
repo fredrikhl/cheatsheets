@@ -2,7 +2,7 @@
 
 ## sessions
 
-```
+```bash
 # create
 tmux new-session -s <session-name>
 
@@ -17,6 +17,7 @@ tmux list-sessions
 tmux ls
 ```
 
+
 - `attach -d`: attach and detach any other sessions
 - `attach -r`: attach in read-only mode
 
@@ -28,4 +29,5 @@ tmux ls
 
 ## commands
 
-- `list-leys [-T <context>]`, contexts: `prefix`, `root`, …
+- `list-keys [-T <context>]`, contexts: `prefix`, `root`, …
+- `rename-window <title>`
