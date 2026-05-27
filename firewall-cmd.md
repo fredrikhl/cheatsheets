@@ -1,5 +1,20 @@
 # firewall-cmd
 
+## list zones
+
+```bash
+firewall-cmd --list-all-zones
+firewall-cmd --get-active-zones
+firewall-cmd --get-default-zone
+```
+
+## Show zone
+
+```bash
+firewall-cmd --info-zone=<zone>
+```
+
+
 
 ## blocklist
 
