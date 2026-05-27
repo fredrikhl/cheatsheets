@@ -1,29 +1,32 @@
 # ssh
 
-## socks5 tunnel
+## Proxy/forwarding
 
 ```bash
-# make a socks5 proxy tunnel at localhost:<port> to <target>
-ssh -C2q -D <port> <target>
+# Start a Socks5 proxy at localhost:<port>
+ssh -D [<addr>]:<port> …
+
+# forward specific socket/port
+ssh -L <local-socket>:<remote-socket> …
+
+# e.g. expose `localhost:80` @ example.org as *:8080 locally
+ssh -L *:8080:localhost:80 example.org
+
+# forwarding options
+#  -f -- go to background when connection is up
+#  -N -- don't run any commands
+#  -q -- quiet mode
 ```
 
-## Port forwarding
+
+## ControlMaster management
 
 ```bash
-# expose a given port <rport> on <target> on localhost <lport>
-ssh <target> -L <lport>:localhost:<rport>
+# check connection
+ssh -O check <host>
 
-# expose a remote <rhost:rport> through a proxy <proxy>
-ssh -fL <lport>:<rhost>:<rport> <proxy> -N
-```
-
-## Useful options
-
-```bash
-ssh -X  # tunnel x session
-ssh -Y  # tunnel x session, trusted
-ssh -t  # tty-allocation, repeat to force (`ssh -tt')
-ssh -A  # forward authentication agent
+# kill connection
+ssh -O exit <host>
 ```
 
 
