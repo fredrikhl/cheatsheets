@@ -26,6 +26,7 @@ ssh -t  # tty-allocation, repeat to force (`ssh -tt')
 ssh -A  # forward authentication agent
 ```
 
+
 ## Escape sequences
 
 Supported escape sequences:
@@ -42,22 +43,3 @@ Notes:
 * Escapes are only recognized immediately after newline.
 * To kill the current session hit subsequently Enter `↵`, `~`, `.`
 * More of these escape sequences can be listed with `↵`, `~`, `?`:
-
-
-## Config
-
-```
-Host bitbucket
-    Compression yes
-    HostName bitbucket.org
-    User git
-    IdentityFile ~/.ssh/<key-file>
-
-# Forwarding
-Host springboard
-    HostName <hostname>
-
-Host target
-    ProxyCommand ssh springboard nc %h %p 2>/dev/null
-```
-
