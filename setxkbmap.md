@@ -37,3 +37,6 @@ setxkbmap -option <option>
 
 - Compose: `-option compose:menu`
 - ISO Level3: `-option level3:ralt_switch`
+- CAPS/escape: `-option caps:escape_shifted_capslock`, `-option caps:escape`,
+  `-option caps:swapescape`
+
