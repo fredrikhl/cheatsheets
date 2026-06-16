@@ -8,15 +8,6 @@ ip link set dev wlan0 {up|down}
 
 # change mac address 
 ip link set dev eth0 address aa:bb:cc:dd:ee:ff
-
-# set a static ip and netmask
-ip addr add 192.168.1.100/32 dev eth0
-
-# remove ip from an interface
-ip addr del 192.168.1.100/32 dev eth0
-
-# remove all ips from an interface
-ip addr flush dev eth0
 ```
 
 Routing
@@ -31,6 +22,10 @@ ip route add 192.168.0.0/24 dev eth0
 
 Info
 ----
+
+- `-br[ief]` — only basic information
+- `-j[son]` — json output
+
 ```
 # ip address of all interfaces
 ip -brief addr
