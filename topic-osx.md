@@ -1,4 +1,4 @@
-# Useful OSX cheats
+# OS X / macOS
 
 ## disable osx turds on external drives
 
@@ -67,4 +67,23 @@ sysctl -w kern.ipc.somaxconn=2048
 # max open files
 sysctl -w kern.maxfiles=4096
 sysctl -w kern.maxfilesperproc=1024
+```
+
+
+## system-profiler
+
+### List apps
+
+```bash
+/usr/sbin/system_profiler SPApplicationsDataType
+
+# 32-bit apps only
+/usr/sbin/system_profiler SPApplicationsDataType | grep -A3 "64-Bit (Intel): No"| grep Location | cut -c17-
+```
+
+
+### Get serial number
+
+```bash
+system_profiler SPHardwareDataType | grep Serial
 ```
