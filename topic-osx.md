@@ -87,3 +87,12 @@ sysctl -w kern.maxfilesperproc=1024
 ```bash
 system_profiler SPHardwareDataType | grep Serial
 ```
+
+
+### chflags
+
+Remove file flags recursively from a folder.
+
+```bash
+chflags -R 0 <path>
+```
