@@ -24,3 +24,10 @@ git branch -m <oldname> <newname>
 ```bash
 git branch -u <remote>/<branch>
 ```
+
+
+## delete remote branch
+
+```bash
+git push -d <remote> <branch>
+```
