@@ -15,7 +15,7 @@ git stash drop [n]
 ```
 
 
-## inspect entry
+## Inspect entry
 
 ```bash
 # show status
@@ -26,7 +26,7 @@ git stash show -p [n]
 ```
 
 
-## apply entry
+## Apply entry
 
 ```bash
 # apply and remove entry (if successful)
@@ -37,10 +37,19 @@ git stash apply [n]
 ```
 
 
-## create branch
+## Conflicts
 
-Create a branch from stash entry, but apply it to the last commit from which the
-entry was created (i.e. avoids conflicts with local changes in the working tree)
+To resolve conflicts after a bad `pop`:
+
+```bash
+# Resolve conflicts (or do nothing to later checkout original)
+# Restore all files (or individual files) to mark conflicts as resolved
+git restore --staged -- .
+```
+
+
+Avoid conflicts by popping to a new branch.  This applies the changes to the
+commit from which the entry was created, which should avoid most conflicts.
 
 ```bash
 git stash branch <name> [n]
