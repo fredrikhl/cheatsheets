@@ -33,3 +33,14 @@ yumdownloader --source <package name>
 
 # (You have to install yumdownloader first, which is installed by the yum-utils package)
 ```
+
+
+## Orphaned and leaves
+
+```
+# requires yum-utils
+
+package-cleanup --leaves
+
+package-cleanup --orphans
+```

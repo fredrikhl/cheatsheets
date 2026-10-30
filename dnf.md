@@ -81,3 +81,11 @@ Install the build dependencies for a SRPM or from a `.spec` file. Requires
 ```bash
 dnf builddep <srpm/.spec file>
 ```
+
+
+## Find orphaned or leaf packages
+
+```
+dnf repoquery --leaf
+dnf repoquery --extrass
+```
